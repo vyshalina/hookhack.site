@@ -411,7 +411,7 @@ ul, ol, dl {
 .work-item:hover img {
 /*animation: scaleImage 6s ease infinite;*/ }
 
-.work-item h3 {
+.work-item h3, .work-item .class-h3  {
   position: absolute;
   z-index: 1;
   font-weight: bold;
@@ -419,8 +419,10 @@ ul, ol, dl {
   white-space: nowrap;
   display: none; }
 
-.work-item h3 a {
-  color: #fff; }
+.work-item h3 a, .work-item .class-h3 a  {
+  color: #fff; text-shadow: 1px 1px #000;
+  position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%);
+}
 
 .work-item h3.dark-title a {
   color: #000; }
