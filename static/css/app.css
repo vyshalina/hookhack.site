@@ -710,7 +710,9 @@ label.error {
   padding-right: 10px;
   text-transform: uppercase; }
 
-.wrapp_price-block {}
+.wrapp_price-block {
+  max-width: 1600px; margin: 0 auto;
+}
 .price-block {
   display: -ms-flexbox; display: -webkit-box;  display: flex;
   -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;

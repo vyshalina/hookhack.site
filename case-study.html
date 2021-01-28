@@ -72,7 +72,7 @@
           </div>
         </div><!--/.case-intro-->
       </div><!--/.full-->
-      <div class="full white">
+      <div class="full white wrapp_price-block">
         <ul class="tab-nav">
           <li class=""><a href="#lending">Легдинг</a></li>
           <li><a href="#corporate">Корпоративный сайт</a></li>
@@ -81,10 +81,9 @@
           <li><a href="#shop">Интернет-магазин</a></li>
         </ul>
         <div class="tab-content" id="lending">
-          <div class="price-block">
+          <div class="price-block boxes3">
             <div class="price-item">
               <div class="price-title green"><strong>S</strong></div>
-
               <div class="price-body">
                 <div class="price-body_top">
                   <span class="price"><small>от</small><sup>&#8364;</sup> <span>99</span></span>
@@ -134,7 +133,7 @@
           </div><!--/.price-block-->
         </div><!--/.tab-content-->
         <div class="tab-content" id="corporate">
-          <div class="price-block">
+          <div class="price-block slid3">
             <div class="price-item">
               <div class="price-title green"><strong>S</strong></div>
 
@@ -187,7 +186,7 @@
           </div><!--/.price-block-->
         </div><!--/.tab-content-->
         <div class="tab-content" id="news_blog">
-          <div class="price-block">
+          <div class="price-block slid3">
             <div class="price-item">
               <div class="price-title green"><strong>S</strong></div>
 
@@ -240,7 +239,7 @@
           </div><!--/.price-block-->
         </div><!--/.tab-content-->
         <div class="tab-content" id="catalog">
-          <div class="price-block">
+          <div class="price-block slid3">
             <div class="price-item">
               <div class="price-title green"><strong>S</strong></div>
 
@@ -293,7 +292,7 @@
           </div><!--/.price-block-->
         </div><!--/.tab-content-->
         <div class="tab-content" id="shop">
-          <div class="price-block">
+          <div class="price-block slid3">
             <div class="price-item">
               <div class="price-title green"><strong>S</strong></div>
 
@@ -480,8 +479,6 @@
               <img src="images/@stock/font.png" alt="">
             </div>
           </div>
-
-
         </div>
       </div>
       <div class="full no-top centered-text white">
@@ -588,7 +585,39 @@
           return false;
       });
     });
+    $('.wrapp_price-block .boxes3').each(function() {
+      var boxes3 = this;
+
+      if ( $(boxes3).hasClass('slick-initialized') ) return;
+
+      $(boxes3).slick({
+        slidesToShow: 3,
+        slidesToScroll: 0,
+        autoplay: false,
+        pauseOnHover: true,
+        grabCursor: true,
+        responsive: [
+          {
+            breakpoint: 1000,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 0
+            }
+          },
+          {
+            breakpoint: 500,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 0
+            }
+          }
+        ]
+      });
+
+    });
+
 })(window.jQuery);
+
     </script>
   </body>
 </html>
