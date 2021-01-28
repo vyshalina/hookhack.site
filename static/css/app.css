@@ -713,13 +713,8 @@ label.error {
 .wrapp_price-block {
   max-width: 1600px; margin: 0 auto;
 }
-.price-block {
-  display: -ms-flexbox; display: -webkit-box;  display: flex;
-  -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
-}
-.price-item {
-  width: 33.3333%;
-}
+.price-block {}
+.price-item {}
 .price-title {
   display: -ms-flexbox; display: -webkit-box;  display: flex;
   -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
