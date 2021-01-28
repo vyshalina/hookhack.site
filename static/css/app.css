@@ -15,6 +15,7 @@
 13. post
 14. footer
 15. fullscreen menu
+16. tabs
 
 --------------*/
 /* base */
@@ -175,6 +176,7 @@ ul, ol, dl {
 #content {
   height: 100%;
   overflow: auto; }
+
 
 /* animations */
 @keyframes scaleImage {
@@ -1160,3 +1162,22 @@ html.oneh, body.oneh {
     opacity: 0; }
   #topbar #menu-toggler.active .bottom {
     transform: translateY(-11px) translateX(0) rotate(-45deg); }
+
+  /* tabs */
+  .tab-nav {
+    display: -webkit-box; display: -ms-flexbox; display: flex;
+    -webkit-box-align: end; -ms-flex-align: end;   align-items: flex-end;
+    list-style: none; height: 61px;
+    margin-left: 0; margin-bottom: 0;
+  }
+  .tab-nav li a {
+    display: block; padding: 15px 20px;
+    background: #e4e4e4;
+    -webkit-transition: .4s linear; transition: .4s linear;
+  }
+  .tab-nav li a:hover {background: #b3b3b3;}
+  .tab-nav li.active a {
+    background: #b3b3b3;
+    padding-top: 20px;
+    -webkit-transition: .4s linear; transition: .4s linear;
+  }
