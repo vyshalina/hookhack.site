@@ -73,13 +73,21 @@
         </div><!--/.case-intro-->
       </div><!--/.full-->
       <div class="full white wrapp_price-block">
-        <ul class="tab-nav">
-          <li class=""><a href="#lending">Легдинг</a></li>
-          <li><a href="#corporate">Корпоративный сайт</a></li>
-          <li><a href="#news_blog">Новостной сайт/Блог</a></li>
-          <li><a href="#catalog">Интернет-каталог</a></li>
-          <li><a href="#shop">Интернет-магазин</a></li>
-        </ul>
+        <div class="wrapp_tab-nav js-dropdown_tablet">
+          <div class="tab-text">
+            <span>Легдинг</span>
+            <i></i>
+          </div>
+
+          <ul class="tab-nav">
+            <li class=""><a href="#lending">Легдинг</a></li>
+            <li><a href="#corporate">Корпоративный сайт</a></li>
+            <li><a href="#news_blog">Новостной сайт/Блог</a></li>
+            <li><a href="#catalog">Интернет-каталог</a></li>
+            <li><a href="#shop">Интернет-магазин</a></li>
+          </ul>
+        </div><!--/.wrapp_tab-nav-->
+
         <div class="tab-content" id="lending">
           <div class="price-block boxes3">
             <div class="price-item">
@@ -133,23 +141,7 @@
           </div><!--/.price-block-->
         </div><!--/.tab-content-->
         <div class="tab-content" id="corporate">
-          <div class="price-block boxes3">
-            <div class="price-item ">
-              <div class="price-title green"><strong>S</strong></div>
-
-              <div class="price-body">
-                <div class="price-body_top">
-                  <span class="price"><small>от</small><sup>&#8364;</sup> <span>99</span></span>
-                </div>
-                <ul>
-                  <li>Шаблон на выбор (3-5 шт.)</li>
-                  <li>"Подгоняем" шаблон под заказчика (подбор фоновых картинок, шрифтов, цветов, расположение блоков)</li>
-                  <li>Наполнение контентом (размещение текста и картинок (до 30 шт.) заказчика в блоках, на стр. сайта.)</li>
-                  <li>Форма обратной связи</li>
-                  <li>Адаптивный сайт</li>
-                </ul>
-              </div><!--/.price-body-->
-            </div><!--/.price-item-->
+          <div class="price-block boxes2">
 
             <div class="price-item">
               <div class="price-title grey"><strong>M</strong></div>
@@ -515,9 +507,7 @@
         <div class="case-intro">
           <div class="row">
             <div class="large-8 large-centered columns">
-              <h2 class="case-title">
-                Problem Solution
-              </h2>
+              <h2 class="case-title">Problem Solution</h2>
             </div>
           </div>
           <div class="row">
@@ -586,50 +576,72 @@
       });
     });
 
-})(window.jQuery);
-$('.boxes3').each(function() {
-  var boxes3 = this;
-
-  if ( $(boxes3).hasClass('slick-initialized') ) return;
-
-  $(boxes3).slick({
-    slidesToShow: 3,
-    autoplay: false,
-    autoplaySpeed: 5000,
-    pauseOnHover: false,
-    grabCursor: true,
-    dots: true,
-    infinite: false,
-    responsive: [
-      {
-        breakpoint: 1050,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 568,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
-  });
-
-});
-
+    })(window.jQuery);
+    $('.boxes3').each(function() {
+      var boxes3 = this;
+      if ( $(boxes3).hasClass('slick-initialized') ) return;
+      $(boxes3).slick({
+        slidesToShow: 3,
+        autoplay: false,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
+        grabCursor: true,
+        dots: true,
+        infinite: false,
+        responsive: [
+          {
+            breakpoint: 1000,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 568,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
+    $('.boxes2').each(function() {
+      var boxes2 = this;
+      if ( $(boxes2).hasClass('slick-initialized') ) return;
+      $(boxes2).slick({
+        slidesToShow: 2,
+        autoplay: false,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
+        grabCursor: true,
+        dots: true,
+        infinite: false,
+        responsive: [
+          {
+            breakpoint: 1000,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 568,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
+    /*Tabs responsive*/
+    if ( $(window).width() <= 1000) {
+      $('.js-dropdown_tablet .tab-text').click(function(){
+        $(this).parent().find('.tab-nav').slideToggle(600);
+        $(this).find('i').toggleClass('open');
+      });
+      $('.js-dropdown_tablet .tab-nav li a').click(function(){
+        var activeText = $(this).text();
+        $(this).parent().parent().parent().find('.tab-text > span').html(activeText);
+      });
+    }
     </script>
   </body>
 </html>

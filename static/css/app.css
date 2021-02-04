@@ -710,9 +710,11 @@ label.error {
   padding-right: 10px;
   text-transform: uppercase; }
 
+/*====== Prices =====*/
 .wrapp_price-block {
   max-width: 1600px; margin: 0 auto;
 }
+.wrapp_tab-nav .tab-text {display: none;}
 .price-block {}
 .price-item {}
 .price-title {
@@ -748,6 +750,51 @@ label.error {
 .price-body_top .price span {
   font-size: 60px;
 }
+@media (max-width: 1050px) {
+  .tab-nav li a {
+    font-size: 15px; padding: 15px;
+  }
+}
+@media (max-width: 1000px) {
+  .full.wrapp_price-block {padding-left: 70px; padding-right: 70px;}
+  .wrapp_tab-nav .tab-text {
+    display: -webkit-box; display: -ms-flexbox; display: flex;
+    -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;
+    padding: 10px 20px; position: relative;
+    background: #b3b3b3;
+  }
+  .wrapp_tab-nav .tab-text > span {font-size: 20px; font-weight: 800;}
+  .wrapp_tab-nav .tab-text > i {
+    display: inline-block; position: absolute; top: 23px; right: 20px; width: 20px; height: 20px;
+    -webkit-transform: rotate(80deg); transform: rotate(80deg);
+    -webkit-transition: all .4s ease; transition: all .4s ease;
+  }
+  .wrapp_tab-nav .tab-text > i.open {
+    -webkit-transform: rotate(-99deg); transform: rotate(-99deg);
+    top: 14px; right: 17px;
+  }
+  .wrapp_tab-nav .tab-text > i::before {
+    content: '\203A';
+    color: #fff; font-size: 48px; line-height: 0;
+    position: absolute; left: 0; top: 0;
+  }
+  .wrapp_tab-nav .tab-nav {
+    -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column;
+    width: 100%; height: auto;
+    display: none;
+  }
+  .wrapp_tab-nav .tab-nav li {width: 100%;}
+  .wrapp_tab-nav .tab-nav li a {background: #e4e4e4; padding: 7px 20px;}
+  .wrapp_tab-nav .tab-nav li.active a {background: #a1f9d4; padding: 7px 20px;}
+  .price-block .slick-next::before, .price-block .slick-prev::before {
+    color: #000; font-size: 70px;
+  }
+  .price-block .slick-prev {left: -30px;}
+  .price-block .slick-next {right: -30px;}
+  .price-block .slick-next::before {content: '\203A';}
+  .price-block .slick-prev::before {content: '\2039';}
+}
+/*====== /END/ Prices =====*/
 
 .bg-text-honri {
   overflow: hidden;
