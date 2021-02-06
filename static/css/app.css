@@ -712,10 +712,9 @@ label.error {
 
 /*====== Prices =====*/
 .wrapp_price-block {
-  max-width: 1600px; margin: 0 auto;
+  max-width: 1600px; margin: 0 auto; padding: 0 115px;
 }
 .wrapp_tab-nav .tab-text {display: none;}
-.price-block {}
 .price-item {}
 .price-title {
   display: -ms-flexbox; display: -webkit-box;  display: flex;
@@ -750,12 +749,21 @@ label.error {
 .price-body_top .price span {
   font-size: 60px;
 }
+.wrapp_tab-nav, .price-block, .price-block .slick-list  {width: 1200px!important; margin: 0;}
+@media (max-width: 1300px) {
+  .wrapp_tab-nav, .price-block, .price-block .slick-list  {width:1070px!important; margin: 0;}
+}
+@media (max-width: 1200px) {
+  .wrapp_tab-nav, .price-block, .price-block .slick-list  {width: 878px!important; margin: 0;}
+}
 @media (max-width: 1050px) {
+  .wrapp_price-block {padding: 0 40px;}
   .tab-nav li a {
     font-size: 15px; padding: 15px;
   }
 }
 @media (max-width: 1000px) {
+  .wrapp_tab-nav, .price-block, .price-block .slick-list  {width: 850px!important; margin: 0 auto;}
   .full.wrapp_price-block {padding-left: 70px; padding-right: 70px;}
   .wrapp_tab-nav .tab-text {
     display: -webkit-box; display: -ms-flexbox; display: flex;
@@ -793,6 +801,32 @@ label.error {
   .price-block .slick-next {right: -30px;}
   .price-block .slick-next::before {content: '\203A';}
   .price-block .slick-prev::before {content: '\2039';}
+}
+@media (max-width: 900px) {
+  .wrapp_tab-nav, .price-block, .price-block .slick-list  {width: 750px!important; margin: 0 auto;}
+}
+@media (max-width: 800px) {
+  .wrapp_tab-nav, .price-block, .price-block .slick-list  {width: 650px!important; margin: 0 auto;}
+}
+@media (max-width: 700px) {
+  .wrapp_tab-nav, .price-block, .price-block .slick-list  {width: 550px!important; margin: 0 auto;}
+}
+@media (max-width: 600px) {
+  .wrapp_tab-nav, .price-block, .price-block .slick-list  {width: 450px!important; margin: 0 auto;}
+}
+@media (max-width: 500px) {
+  .wrapp_tab-nav, .price-block, .price-block .slick-list  {width: 350px!important; margin: 0 auto;}
+}
+@media (max-width: 400px) {
+  .wrapp_tab-nav, .price-block, .price-block .slick-list  {width: 300px!important; margin: 0 auto;}
+}
+@media (max-width: 380px) {
+  .wrapp_tab-nav, .price-block, .price-block .slick-list  {width: 240px!important; margin: 0 auto;}
+  .price-block .slick-next::before, .price-block .slick-prev::before {
+    font-size: 50px;
+  }
+  .price-block .slick-prev {left: -25px;}
+  .price-block .slick-next {right: -20px;}
 }
 /*====== /END/ Prices =====*/
 
