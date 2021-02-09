@@ -430,7 +430,7 @@
   #header img.triangle {
     right: 70%; }
   #header img.circle-dissolve {
-    right: -20px;
+    right: 0;
     bottom: 20%; } }
 
 @media only screen and (max-width: 320px) {
@@ -438,7 +438,7 @@
     font-size: 36px;
     line-height: 1.1em; }
   #header img.circle-dissolve {
-    right: -20px;
+    right: 0;
     bottom: 50px; }
   #header img.wave {
     display: none; } }
