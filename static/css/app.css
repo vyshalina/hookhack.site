@@ -52,7 +52,7 @@ a.text-link:hover {
   text-align: center;
   clear: both;
   margin-bottom: 30px; }
-
+.grey-text {color:#999; text-shadow: 1px 1px 1px rgba(0,0,0,0.5);}
 .button {
   text-transform: uppercase;
   position: relative;
@@ -306,8 +306,9 @@ ul, ol, dl {
     mix-blend-mode: multiply; }
 
 #header.animated .animo {
-  z-index: 2;
+  z-index: 1;
   position: absolute;
+  opacity: 0.4!important;
   transition-property: all;
   transition-duration: .8s;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); }
@@ -345,6 +346,7 @@ ul, ol, dl {
     font-size: 18px; }
 
 .page-header p {
+  color: #999;
   font-size: 26px;
   margin-bottom: 30px;
   letter-spacing: 0; }
@@ -396,6 +398,8 @@ ul, ol, dl {
   font-size: 40px;
   line-height: 1.45em;
   margin-bottom: 30px;
+  position: relative;
+  z-index:2;
   letter-spacing: -1px; }
 
 /* portfolios */
@@ -451,7 +455,7 @@ animation: scaleImage 6s ease infinite; }
 }
 
 .fly-portfolio.first .mobile  {
-  width: 98px; position: absolute; left: 96px; top: 189px; z-index: 2;
+  width: 98px; position: absolute; left: 96px; top: 189px;
   transform: rotate(-22deg);
 }
 .fly-portfolio.first .note {
@@ -466,67 +470,14 @@ animation: scaleImage 6s ease infinite; }
 .work-item:hover .fly-portfolio.first .note {
   right: 60px;
 }
-
-@media only screen and (min-width: 1201px) {
-  .works.main .work-item.big-image {
-    width: 1010px; margin: 0 auto;
-  }
-  .works.main .work-item.small-image {
-    width: 505px; margin: 0 auto;
-  }
-}
 @media only screen and (max-width: 1200px) {
   .main-page .works .columns {padding: 0;}
-  .wrapp_works-main.full {padding: 0;}
-  .wrapp_works-main .works {width: 992px; margin: 0 auto;}
-  .wrapp_works-main .works .large-6 {width: 50%;}
-  .wrapp_works-main .fly-portfolio.big .note {
-    width: 500px;
-  }
-  .works.main .work-item.small-image {width: 445px; margin: 0 auto;}
-  .works.main .work-item.small-image  .fly-portfolio.second img {width: 70%;}
-  .wrapp_works-main .fly-portfolio.big .comp {width: 515px;}
+}
+@media only screen and (max-width: 1100px) {
   .fly-portfolio.first .mobile {left: 36px;}
   .work-item:hover .fly-portfolio.first .mobile {left: 56px;}
   .fly-portfolio.first .note {width: 229px;}
-}
-@media only screen and (max-width: 991px) {
-  .wrapp_works-main .works {width: 100%;}
-  .works.main .work-item.big-image {
-    width: 768px; margin: 0 auto;
-  }
-  .wrapp_works-main .fly-portfolio.big .note, .wrapp_works-main .fly-portfolio.big .comp {width: 370px;}
-  .fly-portfolio.first .note {width: 210px; top: 13px;}
-  .fly-portfolio.first .mobile {width: 90px; top: 150px;}
-  .fly-portfolio.second .note {width: 60%; left: 80px}
-  .works.main .work-item.small-image {width: 380px;}
-  .works.main .work-item.small-image .fly-portfolio.second img {width: 70%;}
-}
-@media only screen and (max-width: 768px) {
-  .works.main .work-item.big-image {width: 575px; margin: 0 auto;}
-  .wrapp_works-main .fly-portfolio.big .note, .wrapp_works-main .fly-portfolio.big .comp {width: 300px;}
-  .fly-portfolio.big .note {left: 30px;}
-  .fly-portfolio.big .comp {right: 25px;}
-  .wrapp_works-main .works .large-6 {width: 100%;}
-}
-@media only screen and (max-width: 575px) {
-  .works.main .work-item.big-image {
-    width: 480px;
-  }
-  .wrapp_works-main .fly-portfolio.big .note, .wrapp_works-main .fly-portfolio.big .comp {
-    width: 250px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .works.main .work-item.big-image {width: 100%; overflow: hidden;}
-  .works.main .work-item.big-image > img {width: 380px; margin-left: -30px; max-width: 1500px;}
-  .wrapp_works-main .fly-portfolio.big .comp {display: none;}
-  .wrapp_works-main  .fly-portfolio.big .note {width: 300px; left: 11px; top: 18%;}
-  .work-item:hover .fly-portfolio.big .note {left: 18px; top: 18%;}
-  .works.main .work-item.small-image {width: 310px;}
-  .fly-portfolio.first .note {width: 180px; right: 50px; top: 0;}
-  .fly-portfolio.first .mobile {width: 80px; top: 125px; left: 0;}
-  .work-item:hover .fly-portfolio.first .mobile {left: 18px;}
+
 }
 
 
@@ -562,9 +513,10 @@ animation: scaleImage 6s ease infinite; }
   margin-bottom: 100px; }
 
 .playground-small {
+  font-size: 20px;
   left: 20%;
-  width: 40%;
-  top: 250px;
+  width: 60%;
+  top: 150px;
   position: relative; }
 
 .playground-right {
@@ -765,7 +717,7 @@ label.error {
 
 /*====== Prices =====*/
 .wrapp_price-block {
-  max-width: 1600px; margin: 0 auto; padding: 0 115px;
+  max-width: 1600px; margin: 0 auto; padding: 0 115px; margin-bottom: 70px;
 }
 .wrapp_tab-nav .tab-text {display: none;}
 .price-item {}
@@ -886,18 +838,17 @@ label.error {
 .bg-text-honri {
   overflow: hidden;
   position: absolute;
-  top: 0;
+  bottom: -22%;
   left: 30%;
   z-index: 2;
   width: 200vw;
   height: auto; }
 
-.bg-text-honri h2 {
+.bg-text-honri h2, .bg-text-honri .h2 {
   font-weight: 800;
-  font-size: 30vw;
-  line-height: 0.8em;
-  color: #000;
-  opacity: 0.04; }
+  font-size: 22vw;
+  color: #cccccc;
+  opacity: 0.4; }
 
 .float-img {
   position: absolute;
@@ -1178,7 +1129,8 @@ nav.wrapper a.next:hover i {
     top: 0;
     left: 0; }
 
-.new-footer h1 {
+.new-footer h1, .new-footer .h1 {
+  font-weight: 800;
   white-space: nowrap;
   position: absolute;
   left: 50%;
@@ -1191,7 +1143,7 @@ nav.wrapper a.next:hover i {
   height: 400px;
   text-align: center; }
 
-.new-footer h1 a {
+.new-footer h1 a, .new-footer .h1 a {
   cursor: pointer;
   display: block;
   width: 100%;
@@ -1237,6 +1189,9 @@ html.oneh, body.oneh {
         letter-spacing: 2px;
         line-height: 1.4em;
         text-transform: uppercase; }
+        #menu-overlay #menu ul a.active {
+          color: #020c9c;
+        }
 
 #menu-overlay.open {
   opacity: 1;
@@ -1312,3 +1267,45 @@ html.oneh, body.oneh {
     padding-top: 20px;
     -webkit-transition: .4s linear; transition: .4s linear;
   }
+
+/*Отредактировно нами*/
+/*Services main page*/
+.wrapp_services-block {
+  display: -webkit-box; display: -ms-flexbox; display: flex;
+  -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+}
+/*End services main page*/
+
+/*Services*/
+.services-content {overflow: hidden;}
+.services-content .full {
+  display: -webkit-box; display: -ms-flexbox; display: flex;
+  overflow: visible;
+}
+.services-content .full:first-child {padding-top: 235px;}
+.services-content .full:first-child .bg-text-honri {
+  top:-25px; bottom: auto;
+}
+.services-content .full .bg-text-honri {
+  top:-235px; bottom: auto;
+}
+.services-content .full:nth-child(odd) {
+  background: #fff;
+}
+.services-content .full:nth-child(even) {
+  flex-direction: row-reverse;
+  background: #f5f5f5;
+}
+.services-content .full:nth-child(even) .services-content-block.left {
+  text-align: right;
+}
+.services-content .full:nth-child(even) .services-content-block.right {
+  padding-right: 15px;
+}
+.services-content .full .services-content-block {position: relative; z-index: 3;}
+.services-content .full .services-content-block.left {
+  width: 35%;
+}
+.services-content .full .services-content-block.right {width: 65%;}
+/*End services */
+.large-centered {padding-top: 5px;}
