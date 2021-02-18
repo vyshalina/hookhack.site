@@ -1277,8 +1277,11 @@ html.oneh, body.oneh {
 /*End services main page*/
 
 /*Services*/
+.services_intro-text {
+  padding-top: 50px; padding-bottom: 50px;
+}
 .services-content {overflow: hidden;}
-.services-content .full {
+.services-content .full, .services-img-text .img-text-item {
   display: -webkit-box; display: -ms-flexbox; display: flex;
   overflow: visible;
 }
@@ -1292,8 +1295,8 @@ html.oneh, body.oneh {
 .services-content .full:nth-child(odd) {
   background: #fff;
 }
-.services-content .full:nth-child(even) {
-  flex-direction: row-reverse;
+.services-content .full:nth-child(even), .services-img-text .img-text-item:nth-child(even) {
+  -webkit-box-orient: horizontal;-webkit-box-direction: reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse;
   background: #f5f5f5;
 }
 .services-content .full:nth-child(even) .services-content-block.left {
@@ -1307,5 +1310,44 @@ html.oneh, body.oneh {
   width: 35%;
 }
 .services-content .full .services-content-block.right {width: 65%;}
+
+.services-img-text.full {padding-top: 0;}
+.services-img-text .img-text-item {margin-bottom: 80px;}
+.services-img-text .img-text-item:last-child {margin-bottom: 0;}
+.services-img-text .img-text-item:nth-child(even) .text-block {padding-right: 50px;}
+.services-img-text .img-text-item:nth-child(odd) .text-block {padding-left: 50px;}
+.img-text-item .img-block, .img-text-item .text-block {
+ width: 50%;
+}
+.img-text-item .text-block {
+  padding-top: 30px;
+}
 /*End services */
 .large-centered {padding-top: 5px;}
+
+/*============== Web-design page ==============*/
+.web-design .playground-small {
+  text-align: left;
+  position: static; width: 100%;
+}
+.style-block .section-title {
+  padding: 60px 0; margin-bottom: 0!important; margin-top: 50px;
+  background: #fff;
+}
+.style-design {background: #fff; padding-bottom: 60px;}
+.style-design-item {
+  display: -webkit-box; display: -ms-flexbox; display: flex;
+  -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+  margin-bottom: 50px;
+}
+.style-design-item:last-child {margin-bottom: 0;}
+.style-design-item:nth-child(odd) .item:last-child {
+  padding-left: 30px;
+}
+.style-design-item:nth-child(even) .item:first-child {
+  padding-right: 30px;
+}
+.style-design-item .item {
+  width: 25%;
+}
+/*==============/end/ Web-design page ==============*/
