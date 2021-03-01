@@ -1169,15 +1169,14 @@ html.oneh, body.oneh {
   opacity: 0;
   transition: opacity 0.2s ease-in; }
   #menu-overlay #menu {
-    height: 100%;
+    display: -webkit-box; display: -ms-flexbox; display: flex;
+    -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+    -webkit-box-align: center; -ms-flex-align: center; align-items: center;
+    height: auto; min-height: 100%;
     position: relative; }
     #menu-overlay #menu ul {
       margin: 0 auto;
       display: block;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -55%);
       list-style: none; }
       #menu-overlay #menu ul li {
         opacity: 0;
@@ -1193,14 +1192,33 @@ html.oneh, body.oneh {
         #menu-overlay #menu ul a.active {
           color: #020c9c;
         }
+        #menu-overlay #menu ul > li > ul {
+          position: static;
+          transform: translate(20px, 0);
+        }
 
 #menu-overlay.open {
   opacity: 1;
-  visibility: visible;
-  height: 100%; }
+  visibility: visible; overflow-y: auto;
+  height: 100%; padding: 20px 0;}
   #menu-overlay.open #menu ul li {
     opacity: 1;
     transform: translateX(0); }
+    #menu-overlay.open #menu ul li.has-children {
+      position: relative;
+    }
+    #menu-overlay.open #menu ul li.has-children .plus {
+      position: absolute; left: -28px; top: 15px;
+      width: 20px; height: 20px;
+    }
+    #menu-overlay.open #menu ul li.has-children .plus:before, #menu-overlay.open #menu ul li.has-children .plus:after {
+      content: '';
+      width: 20px; height: 2px; display: block;
+      background: #000;
+    }
+     #menu-overlay.open #menu ul li.has-children .plus:after {
+       -webkit-transform: rotate(90deg) translateX(-1px); transform: rotate(90deg) translateX(-1px);
+     }
 
 #topbar {
   position: fixed;
@@ -1336,6 +1354,20 @@ html.oneh, body.oneh {
 .img-text-item .text-block {
   padding-top: 30px;
 }
+.services-img-text .before-after {background: #cdcdcd;}
+.services-img-text .before-after .before-after_block {
+  display: -webkit-box; display: -ms-flexbox; display: flex;
+  -ms-flex-pack: distribute; justify-content: space-around;
+  font-size: 18px; color: #fff;
+}
+.services-img-text .before-after .link {
+  color: #666; text-align: center; text-transform: uppercase;
+  display: block; padding: 5px 10px;
+  -webkit-transition: all .4s ease; transition: all .4s ease;
+}
+.services-img-text .before-after .link:hover {
+  color: #020c9c;
+}
 /*End services */
 .large-centered {padding-top: 5px;}
 
@@ -1365,3 +1397,53 @@ html.oneh, body.oneh {
   width: 25%;
 }
 /*==============/end/ Web-design page ==============*/
+
+.stamp {
+	color: #0A9928;
+	font-size: 60px;
+	font-weight: 700;
+	border: 15px solid #0A9928;
+	display: inline-block;
+	padding: 10px 15px;
+  margin-top: 50px;
+	text-transform: uppercase;
+	border-radius: 1rem;
+	font-family: 'Courier';
+	-webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
+  -webkit-mask-size: 944px 604px;
+  -webkit-mask-position: 13rem 6rem;
+  mix-blend-mode: multiply;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+     -webkit-animation-duration: 5s;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-delay: 2s;
+
+  opacity: 0;
+  -webkit-animation-fill-mode:forwards;
+   animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes pulse{
+  0%{
+    opacity:.50;
+    transform-origin: 50% 50%;
+    transform: rotate(-2deg) scale(5);
+    transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  }
+  5%{
+    opacity:1;
+    transform: rotate(-14deg) scale(1);
+  }
+  10%{
+    opacity:1;
+    transform: rotate(-14deg) scale(1);
+  }
+50%{
+    opacity:0;
+  }
+  100%{
+    opacity:0;
+  }
+}
